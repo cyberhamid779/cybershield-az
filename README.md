@@ -1,4 +1,4 @@
-# CyberShield AZ — Layihə Sənədi
+# LionSafe — Layihə Sənədi
 
 ## Problem
 Azərbaycanda 2024-cü ildə bank fırıldaqçılığından **22 milyon AZN** zərər verildi.

@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes import campaigns, users, auth, tracking
 
 app = FastAPI(
-    title="CyberShield AZ",
+    title="LionSafe",
     description="Azərbaycan bank sektoru üçün phishing simulasiya platforması",
     version="0.1.0",
 )
@@ -25,4 +25,4 @@ app.include_router(tracking.router, prefix="/t", tags=["tracking"])
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "service": "CyberShield AZ"}
+    return {"status": "ok", "service": "LionSafe"}

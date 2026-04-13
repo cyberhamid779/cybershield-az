@@ -32,7 +32,7 @@ export default function Dashboard() {
     <Layout>
       <div className="mb-6">
         <h2 className="text-2xl font-bold text-gray-900">Dashboard</h2>
-        <p className="text-gray-500 text-sm mt-1">CyberShield AZ — Ümumi Baxış</p>
+        <p className="text-gray-500 text-sm mt-1">LionSafe — Ümumi Baxış</p>
       </div>
 
       <div className="grid grid-cols-3 gap-5 mb-8">

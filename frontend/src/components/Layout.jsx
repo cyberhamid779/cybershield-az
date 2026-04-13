@@ -19,7 +19,7 @@ export default function Layout({ children }) {
       {/* Sidebar */}
       <aside className="w-56 bg-gray-900 flex flex-col">
         <div className="px-6 py-5 border-b border-gray-700">
-          <p className="text-white font-bold text-lg">CyberShield</p>
+          <p className="text-white font-bold text-lg">LionSafe</p>
           <p className="text-gray-400 text-xs">Admin Panel</p>
         </div>
         <nav className="flex-1 px-3 py-4 space-y-1">

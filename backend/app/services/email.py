@@ -40,6 +40,6 @@ def send_training_email(to_email: str, employee_name: str, training_html: str) -
     """
     Klik basdıqdan sonra əməkdaşa göndərilən təlim emaili.
     """
-    subject = "CyberShield: Vacib Təhlükəsizlik Bildirişi"
+    subject = "LionSafe: Vacib Təhlükəsizlik Bildirişi"
     body = training_html.replace("{{NAME}}", employee_name)
     return send_email(to_email, subject, body)
