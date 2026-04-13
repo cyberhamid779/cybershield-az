@@ -45,10 +45,11 @@ def launch_campaign(campaign_id: int, db: Session = Depends(get_db), current_use
         raise HTTPException(status_code=404, detail="Tapılmadı")
     if campaign.status != CampaignStatus.draft:
         raise HTTPException(status_code=400, detail="Kampaniya artıq aktiv və ya tamamlanmışdır")
-    # TODO: trigger email sending via background task
+    from app.services.campaign import launch_campaign
     campaign.status = CampaignStatus.active
     db.commit()
-    return {"message": "Kampaniya başladıldı"}
+    result = launch_campaign(campaign_id, db)
+    return {"message": "Kampaniya başladıldı", "sent": result["sent"], "failed": result["failed"]}
 
 
 @router.get("/{campaign_id}/stats")
