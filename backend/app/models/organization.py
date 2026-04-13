@@ -7,4 +7,4 @@ class Organization(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String(255), nullable=False)
-    domain = Column(String(255), unique=True, nullable=False)
+    domain = Column(String(255), nullable=False)

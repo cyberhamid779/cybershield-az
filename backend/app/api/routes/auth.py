@@ -24,17 +24,9 @@ def register(data: RegisterRequest, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="Bu email artıq qeydiyyatdadır")
 
     domain = data.email.split("@")[1]
-    existing_org = db.query(Organization).filter(Organization.domain == domain).first()
-    if existing_org:
-        raise HTTPException(status_code=400, detail="Bu domain artıq qeydiyyatdadır")
-
     org = Organization(name=data.company_name, domain=domain)
     db.add(org)
-    try:
-        db.flush()
-    except IntegrityError:
-        db.rollback()
-        raise HTTPException(status_code=400, detail="Bu domain artıq qeydiyyatdadır")
+    db.flush()
 
     admin = User(
         org_id=org.id,
